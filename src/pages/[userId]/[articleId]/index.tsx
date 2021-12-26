@@ -2,11 +2,11 @@ import { useRouter } from 'next/router'
 import { NextPage } from 'next'
 import Error from 'next/error'
 import styles from './index.module.css'
-import { Article } from '@/pages/components/article'
+import { Article } from '@/components/article'
 import { formatDate } from '@/utils/date'
 import { useGetArticleQuery } from '@/generated/graphql'
 
-import { SiteHeader } from '@/pages/components/site-header'
+import { SiteHeader } from '@/components/site-header'
 
 const ArticlePage: NextPage = () => {
   const router = useRouter()

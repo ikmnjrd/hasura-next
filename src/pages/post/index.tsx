@@ -1,7 +1,9 @@
 import { NextPage } from 'next'
 import { useCallback, useState } from 'react'
 
-import { Editor } from '@/pages/components/editer'
+import { SiteHeader } from '@/components/site-header'
+import { Editor } from '@/components/editer'
+import { Button } from '@/components/button'
 
 import styles from './index.module.css'
 
@@ -17,21 +19,25 @@ const PostPage: NextPage = () => {
   )
 
   return (
-    <div className={styles.editContent}>
-      <input
-        className={styles.subject}
-        type="text"
-        placeholder="タイトル"
-        value={subject}
-        onChange={handleChangeSubject}
-      />
-      <Editor
-        className={styles.editor}
-        placeholder="本文を書きましょう"
-        value={content}
-        onEdit={setContent}
-      />
-    </div>
+    <>
+      <SiteHeader />
+      <div className={styles.editContent}>
+        <input
+          className={styles.subject}
+          type="text"
+          placeholder="タイトル"
+          value={subject}
+          onChange={handleChangeSubject}
+        />
+        <Editor
+          className={styles.editor}
+          placeholder="本文を書きましょう"
+          value={content}
+          onEdit={setContent}
+        />
+        <Button className={styles.submitButton}>投稿する</Button>
+      </div>
+    </>
   )
 }
 
