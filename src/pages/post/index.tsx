@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import { useCallback, useState } from 'react'
 
-import { SiteHeader } from '@/components/site-header'
+import { SiteHeader, SiteHeaderItem } from '@/components/site-header'
 import { Editor } from '@/components/editer'
 import { Button } from '@/components/button'
 
@@ -18,9 +18,22 @@ const PostPage: NextPage = () => {
     [],
   )
 
+  const siteHeaderRight = (
+    <>
+      <SiteHeaderItem>
+        <Button type="submit">
+          <span>投稿する</span>
+        </Button>
+      </SiteHeaderItem>
+      <SiteHeaderItem>
+        <img className={styles.userIcon} src="/profile.png" />
+      </SiteHeaderItem>
+    </>
+  )
+
   return (
     <>
-      <SiteHeader />
+      <SiteHeader right={siteHeaderRight} />
       <div className={styles.editContent}>
         <input
           className={styles.subject}
