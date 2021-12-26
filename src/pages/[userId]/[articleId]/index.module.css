@@ -32,3 +32,8 @@
 .content {
   margin-top: 32px
 }
+
+.newContent {
+  margin-left: 8px;
+  color: #22c;
+}
