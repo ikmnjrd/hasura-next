@@ -5,6 +5,7 @@ import { useClassNames } from '@/utils'
 import styles from './index.module.css'
 
 type Props =
+  | (React.ComponentPropsWithRef<'button'> & { as: undefined })
   | (React.ComponentPropsWithRef<'button'> & { as?: 'button' })
   | (React.ComponentPropsWithRef<'a'> & { as: 'a' })
 
